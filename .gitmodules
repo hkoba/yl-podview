@@ -1,4 +1,3 @@
 [submodule "docs"]
 	path = docs
 	url = ../yl-docs.git
-	branch = dev
