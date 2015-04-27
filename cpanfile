@@ -5,6 +5,8 @@ requires  'YATT::Lite' => 0;
 requires 'Plack' => 0;
 requires 'Pod::Simple::SimpleTree' => 0;
 
-recommends 'DBI' => 0;
-recommends 'DBIx::Class' => 0;
-recommends 'Otogiri' => 0;
+requires 'Locale::PO' => 0;
+
+requires 'DBI' => 0;
+requires 'DBIx::Class' => 0;
+requires 'Otogiri' => 0;
