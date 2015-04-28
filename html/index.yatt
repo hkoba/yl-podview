@@ -83,12 +83,12 @@ die Plack::App::File->new->serve_path($con->cget('env'), $img);
   <yatt:my files:list="&yatt:docpath_files(pod);"/>
   <yatt:if "&yatt:lexpand(:files);">
     <h3>&yatt[[;...or you can see local pods listed below:&yatt]];</h3>
-    <dl>
+    <dl class="item">
       <yatt:foreach my:value=pod_info list=files>
 	<yatt:my url="&yatt:site_prefix();/mod/&yatt:pod_info[2];"/>
 	<yatt:if &yatt:pod_info[-1];>
-	<dt><a href="&yatt:url;">&yatt:pod_info[0];</a></dt>
-	<dd>
+	<dt class="item"><a href="&yatt:url;">&yatt:pod_info[0];</a></dt>
+	<dd class="item">
 	  &yatt:pod_info[-1];
 	</dd>
 	
@@ -118,9 +118,9 @@ DUMP(found=&yatt:found;)
 
 
 <!yatt:widget mobile mod sh_style>
-<yatt:envelope mobile sh_style title=mod>
-
 <yatt:my found:value="&yatt:search_pod(:mod);"/>
+<yatt:envelope mobile sh_style title=mod lang="&yatt:pod_lang(:found,en);">
+
 
 <div data-role="page">
   <div data-role="header">
@@ -146,9 +146,8 @@ DUMP(found=&yatt:found;)
 
 
 <!yatt:widget podview mod sh_style>
-<yatt:envelope sh_style title=mod>
-
 <yatt:my found:value="&yatt:search_pod(:mod);"/>
+<yatt:envelope sh_style title=mod lang="&yatt:pod_lang(:found,en);">
 <header class="container-fluid">
   <div class="navbar">
     <div class="navbar-inner">
@@ -379,6 +378,7 @@ Z(<yatt:inline list=rest/>)
 
 <!yatt:widget envelope
 	      title="html?" style="html?" mobile="bool/0"
+	      lang="?en"
 	      sh_style
 	      body=[code title="html?"] body_class="?class"
 	      footer="html?">
@@ -394,7 +394,7 @@ Z(<yatt:inline list=rest/>)
   <style type="text/css">&yatt:style;</style>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
+<body class="lang-&yatt:lang;">
   <yatt:body title/>
   <script type="text/javascript" src="&yatt:site_prefix();/vendor/jquery/jquery.min.js"></script>
   <script type="text/javascript" src="&yatt:site_prefix();/vendor/shjs/sh_main.js"></script>

@@ -52,6 +52,11 @@ sub search_pod {
   @found;
 };
 
+Entity pod_lang => sub {
+  my ($this, $podfn, $default) = @_;
+  $podfn =~ s/\.(\w+)\.(pm|pod)$// ? $1 : ($default // "");
+};
+
 Entity suffix_list => sub {
   my ($this) = @_;
   my $lang = $this->entity_current_lang;

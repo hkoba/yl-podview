@@ -57,19 +57,42 @@ code.pod {
     font-style: normal;
 }
 
+p > code.pod {
+    font-size: 90%;
+}
+
+h2.head1 code.pod, h3.head2 code.pod, h4.head3 code.pod {
+    font-size: 105%;
+}
+dt.item code.pod {
+    font-size: 100%;
+}
+
 i.pod.fn {
     background-color: #F7F7F9;
     border: 1px solid #E1E1E8;
+    font-size: 105%;
 }
 
 dl.item, ul.item, ol.item {border-left: solid 3px #ccc;}
 dl.item { margin: .3em; padding: .5em; }
 ul.item, ol.item { margin: 0px; padding: 1em; }
+dl.item, ul.item, ol.item {
+    margin-top: 16px; margin-bottom: 16px;
+    padding-top: 10px; padding-bottom: 10px;
+    padding-left: 16px;
+}
+
 .item li {
     list-style-position: inside;
 }
 
-dt.item { margin-bottom: .3em; border-bottom: solid 1px green; }
+dt.item {
+    margin-bottom: .3em;
+    border-bottom: solid 1px green;
+    padding-bottom: 2px;
+    font-size: 105%;
+}
 dd.item+dt.item {
     margin-top: 1.8em;
 }
@@ -77,25 +100,39 @@ dd.item+dt.item {
 h2.head1 {
     background-color: #eee;
     border-radius: 6px;
-    margin-top: .5em;
     font-size: 25px;
     margin-left: -.3em;
     padding-left: .2em;
 }
 
 h3.head2 {
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    margin: 1em 0;
+    border-top: 3px solid #ddd;
+    border-bottom: 3px solid #ddd;
     font-size: 20px;
 }
 
-h4.head3 {
-    margin-top: .35em;
+h4.head3 {}
+
+h2.head1, h3.head2, h4.head3 {
+    margin: 16px 0;
 }
 
-h2.head1 code.pod, h3.head2 code.pod, h4.head3 code.pod {
-    font-size: 105%;
+h4.head3 {
+    margin-left: -10px;
+    padding-left: 4px;
+    border-left: 6px solid #ddd;
+}
+
+pre.pod {
+    margin: 13px;
+    padding: 13px;
+    background-color: #E8F2F6;
+}
+pre.sh_sourceCode  .sh_string {
+    color: #0C479E;
+}
+pre.sh_sourceCode  .sh_keyword {
+    color: #32A026;
 }
 
 @media (max-width: 800px) {
@@ -103,4 +140,12 @@ h2.head1 code.pod, h3.head2 code.pod, h4.head3 code.pod {
 	overflow-x: scroll;
 	white-space: pre;
     }
+}
+
+p, dl, dt, dd, .item li {
+    font-size: 16px;
+}
+
+body.lang-ja p, body.lang-ja dl, body.lang-ja .item li {
+    line-height: 24px;
 }
