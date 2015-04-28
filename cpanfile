@@ -1,7 +1,7 @@
 # -*- mode: perl; coding: utf-8 -*-
 
 conflicts 'YATT';
-requires  'YATT::Lite' => 0;
+requires  'YATT::Lite' => '>= 0.100';
 requires 'Plack' => 0;
 requires 'Pod::Simple::SimpleTree' => 0;
 
