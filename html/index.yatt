@@ -403,6 +403,9 @@ Z(<yatt:inline list=rest/>)
       sh_highlightDocument('&yatt:site_prefix();/vendor/shjs/lang/', '.js')
     });
   </script>
+  <style>
+    body { color: black; }
+  </style>
 </body>
 </html>
 
