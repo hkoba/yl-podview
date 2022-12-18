@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 use strict;
 use warnings;
-
+use sigtrap die => qw(normal-signals);
 use mro 'c3';
 use File::Spec;
 use File::Basename ();
