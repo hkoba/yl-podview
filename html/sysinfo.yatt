@@ -1,0 +1,12 @@
+<h2>app_root</h2>
+
+&yatt:this:YATT():cget(app_root);
+
+<h2>docpath</h2>
+<ul>
+<yatt:foreach my=dir list="&yatt:lexpand(:this:YATT():cget(docpath));">
+  <li>&yatt:dir;</li>
+</yatt:foreach>
+</ul>
+
+
