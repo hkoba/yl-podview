@@ -5,3 +5,5 @@ stages:
 - deploy
 include:
 - remote: https://gitlab.com/gitlab-org/incubation-engineering/five-minute-production/library/-/raw/main/gcp/cloud-run.gitlab-ci.yml
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
