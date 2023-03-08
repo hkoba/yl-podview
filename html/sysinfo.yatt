@@ -2,11 +2,32 @@
 
 &yatt:this:YATT():cget(app_root);
 
+<h2>:docpath_files(pod)</h2>
+
+<ul>
+<yatt:foreach my=fn list="&yatt:docpath_files(pod);">
+  <li>&yatt:fn;</li>
+</yatt:foreach>
+</ul>
+
+<h2>index.lst</h2>
+
+<yatt:my docs_dir="&yatt:this:YATT():cget(docpath)[0];"
+         index="&yatt:docs_dir;/index.lst"
+         />
+
+<b>&yatt:index;</b> <yatt:if 'not -e $index'>
+doesn't exists.
+<:yatt:else if="not -r $index"/>
+is not readable.
+<:yatt:else/>
+exists and is readable.
+</yatt:if>
+
 <h2>docpath</h2>
 <ul>
 <yatt:foreach my=dir list="&yatt:lexpand(:this:YATT():cget(docpath));">
   <li>&yatt:dir;</li>
 </yatt:foreach>
 </ul>
-
 
