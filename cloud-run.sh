@@ -56,7 +56,7 @@ GCP_CLOUD_RUN_CPU="${GCP_CLOUD_RUN_CPU:-1000m}"
 
 ## private variables
 
-SERVICE_NAME="gitlab-$CI_PROJECT_ID-$CI_COMMIT_REF_SLUG"
+SERVICE_NAME="${SERVICE_NAME:-gitlab-$CI_PROJECT_ID-$CI_COMMIT_REF_SLUG}"
 __GCP_SERVICE_ACCOUNT_KEY_PRIVATE_KEY_DATA_FILE_NAME=local-service-account-key-private-key-data.txt
 __GCP_SERVICE_ACCOUNT_KEY_FILE_NAME=local-service-account-key-file.json
 
