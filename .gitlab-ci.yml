@@ -3,7 +3,17 @@ stages:
 - build
 - test
 - deploy
-include:
-- remote: https://gitlab.com/gitlab-org/incubation-engineering/five-minute-production/library/-/raw/main/gcp/cloud-run.gitlab-ci.yml
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
+  SERVICE_NAME: $SERVICE_NAME
+deploy-to-cloud-run:
+  stage: deploy
+  image: registry.gitlab.com/gitlab-org/incubation-engineering/five-minute-production/library/google-cloud-sdk-for-gitlab:main
+  script:
+    - ./cloud-run.sh
+  environment:
+    name: $CI_COMMIT_REF_NAME
+    url: $DYNAMIC_URL
+  artifacts:
+    reports:
+      dotenv: deploy.env
