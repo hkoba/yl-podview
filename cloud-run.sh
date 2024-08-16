@@ -56,7 +56,9 @@ GCP_CLOUD_RUN_CPU="${GCP_CLOUD_RUN_CPU:-1000m}"
 
 ## private variables
 
-SERVICE_NAME="${SERVICE_NAME:-gitlab-$CI_PROJECT_ID-$CI_COMMIT_REF_SLUG}"
+# SERVICE_NAME="${SERVICE_NAME:-gitlab-$CI_PROJECT_ID-$CI_COMMIT_REF_SLUG}"
+SERVICE_NAME=yatt-yl-podview
+
 __GCP_SERVICE_ACCOUNT_KEY_PRIVATE_KEY_DATA_FILE_NAME=local-service-account-key-private-key-data.txt
 __GCP_SERVICE_ACCOUNT_KEY_FILE_NAME=local-service-account-key-file.json
 
@@ -85,6 +87,8 @@ case "$GCP_SERVICE_ACCOUNT_KEY" in
 esac
 
 ## gcloud auth and configure
+
+set -x
 
 gcloud auth activate-service-account --key-file $__GCP_SERVICE_ACCOUNT_KEY_FILE_NAME || error_and_exit "Failed to activate service account"
 gcloud config set project "$GCP_PROJECT_ID" || error_and_exit "Failed to set GCP project"
