@@ -1,4 +1,4 @@
-FROM perl:latest
+FROM perl:5.38
 
 COPY . /usr/src/myapp
 
