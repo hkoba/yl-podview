@@ -39,8 +39,8 @@ use Config '%Config';
 
   my @docpath;
   {
-    while (@ARGV and -d $ARGV[0]) {
-      push @docpath, shift @ARGV;
+    while (@ARGV and -d $ARGV[-1]) {
+      push @docpath, pop @ARGV;
     }
 
     unless (@docpath) {
